@@ -13,7 +13,7 @@ import java.util.concurrent.Future;
  * @author Iurii Golubnichenko
  *
  * Simple port scanner.
- * See tests for checking this out
+ * See tests for checking this out.
  */
 public class PortScanner {
 
@@ -39,10 +39,8 @@ public class PortScanner {
 
     private Future<Boolean> portIsOpen(final int port) {
         return executorService.submit(() -> {
-            try {
-                Socket socket = new Socket();
+            try(Socket socket = new Socket()) {
                 socket.connect(new InetSocketAddress(ipAddress, port), TIME_OUT);
-                socket.close();
                 printResult(port, true);
                 return true;
             } catch (Exception ex) {

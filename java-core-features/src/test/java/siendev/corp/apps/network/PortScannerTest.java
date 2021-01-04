@@ -5,6 +5,11 @@ import org.junit.jupiter.api.Test;
 
 import java.util.concurrent.ExecutionException;
 
+/**
+ * @author Iurii Golubnichenko
+ *
+ * Tests for PortScanner.
+ */
 public class PortScannerTest {
 
     private static PortScanner portScanner;
